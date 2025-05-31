@@ -393,6 +393,7 @@ class SimulationBlotter(Blotter):
                 for order, txn in slippage.simulate(bar_data, asset, asset_orders):
                     commission = self.commission_models[type(asset)]
                     additional_commission = commission.calculate(order, txn)
+                    txn.commission = additional_commission
 
                     if additional_commission > 0:
                         commissions.append(
