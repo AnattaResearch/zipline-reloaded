@@ -28,12 +28,13 @@ class Transaction:
         self.price = price
         self.order_id = order_id
         self.type = DATASOURCE_TYPE.TRANSACTION
+        self.commission = 0.0
 
     def __getitem__(self, name):
         return self.__dict__[name]
 
     def __repr__(self):
-        template = "{cls}(asset={asset}, dt={dt}," " amount={amount}, price={price})"
+        template = "{cls}(asset={asset}, dt={dt}," " amount={amount}, price={price}, commission={commission})"
 
         return template.format(
             cls=type(self).__name__,
@@ -41,6 +42,7 @@ class Transaction:
             dt=self.dt,
             amount=self.amount,
             price=self.price,
+            commission=self.commission
         )
 
     def to_dict(self):
@@ -51,10 +53,8 @@ class Transaction:
         # Adding 'sid' for backwards compatibility with downstrean consumers.
         py["sid"] = self.asset
 
-        # If you think this looks dumb, that is because it is! We once stored
-        # commission here, but haven't for over a year. I don't want to change
-        # the perf packet structure yet.
-        py["commission"] = None
+        # store the commission
+        py["commission"] = self.commission
 
         return py
 
