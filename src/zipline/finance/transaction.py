@@ -34,8 +34,10 @@ class Transaction:
         return self.__dict__[name]
 
     def __repr__(self):
-        template = "{cls}(asset={asset}, dt={dt}," " amount={amount}, price={price}, commission={commission})"
-
+        template = (
+            "{cls}(asset={asset}, dt={dt},"
+            " amount={amount}, price={price}, commission={commission})"
+        )
         return template.format(
             cls=type(self).__name__,
             asset=self.asset,
