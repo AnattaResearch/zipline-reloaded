@@ -44,7 +44,7 @@ class Transaction:
             dt=self.dt,
             amount=self.amount,
             price=self.price,
-            commission=self.commission
+            commission=self.commission,
         )
 
     def to_dict(self):
