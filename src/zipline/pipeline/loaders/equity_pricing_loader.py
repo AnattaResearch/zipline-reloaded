@@ -210,3 +210,4 @@ class EquityPricingLoader(PipelineLoader):
 
 # Backwards compat alias.
 USEquityPricingLoader = EquityPricingLoader
+CryptoSpotPricingLoader = EquityPricingLoader
