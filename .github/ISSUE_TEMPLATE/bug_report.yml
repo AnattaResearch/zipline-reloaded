@@ -1,0 +1,106 @@
+name: Bug Report
+description: File a bug report to help us improve the stats-arb project
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible to help us resolve the issue.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear and concise description of what the bug is.
+      placeholder: Describe the issue you encountered...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+      placeholder: What should have happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to reproduce
+      description: Please provide step-by-step instructions to reproduce the issue.
+      placeholder: |
+        1. Run the following code...
+        2. Execute pipeline with...
+        3. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Please provide details about your environment.
+      value: |
+        - OS: [e.g., macOS 14.0, Ubuntu 20.04]
+        - Python version: [e.g., 3.10.0]
+        - Zipline version: [e.g., 3.0.4]
+        - Pandas version: [e.g., 2.0.0]
+        - NumPy version: [e.g., 1.24.0]
+        - Other relevant package versions:
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which component is affected?
+      options:
+        - PCA Strategy (crypto)
+        - PCA Strategy (quandl)
+        - Zipline Pipeline
+        - Data Loading/Bundles
+        - Alphalens Analysis
+        - Factor Research
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-output
+    attributes:
+      label: Error Output
+      description: If applicable, paste the full error traceback here.
+      render: shell
+      placeholder: Paste error output here...
+
+  - type: textarea
+    id: code-sample
+    attributes:
+      label: Minimal Code Sample
+      description: If possible, provide a minimal code sample that reproduces the issue.
+      render: python
+      placeholder: |
+        # Minimal code to reproduce the issue
+        import zipline
+        # ...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem here (screenshots, data samples, etc.).
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct.
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

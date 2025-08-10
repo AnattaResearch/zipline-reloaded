@@ -1,0 +1,102 @@
+name: Strategy Question
+description: Ask questions about statistical arbitrage strategies, implementation, or usage
+title: "[QUESTION] "
+labels: ["question", "help-wanted"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question about the stats-arb project? We're here to help! Please provide as much context as possible.
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: Question Type
+      description: What type of question is this?
+      options:
+        - Strategy Implementation
+        - PCA Analysis
+        - Data Usage/Sources
+        - Pipeline Configuration
+        - Performance Evaluation
+        - Risk Management
+        - Backtesting
+        - General Usage
+        - Mathematical/Statistical
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: Please describe your question in detail.
+      placeholder: I'm trying to understand how...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide any relevant context about what you're trying to achieve.
+      placeholder: |
+        I'm working on a strategy that...
+        My goal is to...
+
+  - type: textarea
+    id: attempted-solutions
+    attributes:
+      label: What have you tried?
+      description: Describe any solutions you've already attempted.
+      placeholder: |
+        I've tried:
+        1. Looking at the documentation...
+        2. Running the example code...
+        3. Searching for similar issues...
+
+  - type: textarea
+    id: code-context
+    attributes:
+      label: Relevant Code
+      description: If applicable, provide relevant code snippets.
+      render: python
+      placeholder: |
+        # Code you're working with
+        pipeline = Pipeline(...)
+
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: Expected Outcome
+      description: What outcome are you expecting or hoping to achieve?
+      placeholder: I expect to see...
+
+  - type: dropdown
+    id: experience-level
+    attributes:
+      label: Experience Level
+      description: What's your experience level with quantitative finance/statistical arbitrage?
+      options:
+        - Beginner - New to quantitative finance
+        - Intermediate - Some experience with factor models
+        - Advanced - Experienced with statistical arbitrage
+        - Expert - Deep expertise in quantitative strategies
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any other information that might be helpful.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct.
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

@@ -1,0 +1,135 @@
+name: Data Issue
+description: Report issues with data sources, bundles, or data quality
+title: "[DATA] "
+labels: ["data", "bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report issues related to data sources, data quality, or data loading problems.
+
+  - type: dropdown
+    id: data-source
+    attributes:
+      label: Data Source
+      description: Which data source is affected?
+      options:
+        - Binance (Crypto)
+        - Quandl
+        - Other Bundle
+        - Custom Data
+        - Not Sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What type of data issue are you experiencing?
+      options:
+        - Data Loading Failed
+        - Missing Data/Gaps
+        - Incorrect Data Values
+        - Data Format Issues
+        - Bundle Registration
+        - Performance Issues
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue Description
+      description: Describe the data issue you're experiencing.
+      placeholder: The data bundle fails to load because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: date-range
+    attributes:
+      label: Date Range
+      description: What date range were you trying to access?
+      placeholder: |
+        Start Date: 2023-01-01
+        End Date: 2023-12-31
+
+  - type: textarea
+    id: symbols
+    attributes:
+      label: Symbols/Assets
+      description: Which symbols or assets are affected?
+      placeholder: |
+        - BTCUSDT
+        - ETHUSDT
+        - Or list specific equity symbols
+
+  - type: textarea
+    id: expected-data
+    attributes:
+      label: Expected Data
+      description: What data did you expect to see?
+      placeholder: I expected to see OHLCV data for...
+
+  - type: textarea
+    id: actual-data
+    attributes:
+      label: Actual Data/Error
+      description: What did you actually get? Include error messages if any.
+      render: shell
+      placeholder: |
+        Error message or description of incorrect data...
+
+  - type: textarea
+    id: bundle-config
+    attributes:
+      label: Bundle Configuration
+      description: If relevant, provide your bundle configuration.
+      render: yaml
+      placeholder: |
+        # Bundle configuration
+        start_session: 2020-01-01
+        end_session: 2023-12-31
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this data issue?
+      placeholder: |
+        1. Load bundle with...
+        2. Query data for date range...
+        3. Observe issue...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Provide environment details.
+      value: |
+        - OS: 
+        - Python version: 
+        - Zipline version: 
+        - Bundle package version:
+        - Internet connection: [Stable/Intermittent]
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context about the data issue.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct.
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
