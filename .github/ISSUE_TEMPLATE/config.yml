@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Documentation
+    url: https://github.com/AnattaResearch/stats-arb/wiki
+    about: Check the project documentation and wiki for guides and tutorials
+  - name: 💬 Discussions
+    url: https://github.com/AnattaResearch/stats-arb/discussions
+    about: Ask questions and discuss strategies with the community
+  - name: 🔗 Zipline Documentation
+    url: https://zipline.ml4trading.io/
+    about: Official Zipline documentation for pipeline and algorithm development
+  - name: 📊 Alphalens Documentation  
+    url: https://alphalens.ml4trading.io/
+    about: Official Alphalens documentation for factor analysis

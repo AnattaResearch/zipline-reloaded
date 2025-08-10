@@ -1,0 +1,142 @@
+name: Performance Issue
+description: Report performance problems with strategies, pipelines, or analysis
+title: "[PERFORMANCE] "
+labels: ["performance", "optimization"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report performance issues such as slow execution, memory problems, or computational inefficiencies.
+
+  - type: dropdown
+    id: performance-type
+    attributes:
+      label: Performance Issue Type
+      description: What type of performance issue are you experiencing?
+      options:
+        - Slow Pipeline Execution
+        - Memory Usage/Out of Memory
+        - Factor Calculation Slowness
+        - Data Loading Performance
+        - Alphalens Analysis Slowness
+        - Backtest Performance
+        - General Computational Inefficiency
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Performance Issue Description
+      description: Describe the performance problem you're experiencing.
+      placeholder: The pipeline takes an extremely long time to run when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-performance
+    attributes:
+      label: Expected Performance
+      description: What performance did you expect?
+      placeholder: I expected the calculation to complete in...
+
+  - type: textarea
+    id: actual-performance
+    attributes:
+      label: Actual Performance
+      description: What performance are you actually seeing?
+      placeholder: |
+        Execution time: 45 minutes
+        Memory usage: 16GB
+        CPU usage: 100% for extended periods
+
+  - type: textarea
+    id: dataset-size
+    attributes:
+      label: Dataset Information
+      description: Provide information about the size of data you're working with.
+      placeholder: |
+        - Number of assets: 1000
+        - Date range: 2020-01-01 to 2023-12-31
+        - Frequency: Daily
+        - Factor window length: 60 days
+        - Pipeline columns: 5
+
+  - type: textarea
+    id: system-specs
+    attributes:
+      label: System Specifications
+      description: Provide details about your system.
+      value: |
+        - OS: 
+        - CPU: 
+        - RAM: 
+        - Storage Type: [SSD/HDD]
+        - Python version: 
+        - NumPy/Pandas versions:
+
+  - type: textarea
+    id: code-sample
+    attributes:
+      label: Problematic Code
+      description: Provide the code that's causing performance issues.
+      render: python
+      placeholder: |
+        # Code that's running slowly
+        pipeline = Pipeline(
+            columns={
+                'factor': slow_factor_calculation,
+                ...
+            }
+        )
+
+  - type: textarea
+    id: profiling-data
+    attributes:
+      label: Profiling Data
+      description: If you've done any profiling, include the results here.
+      render: shell
+      placeholder: |
+        # Output from cProfile, memory_profiler, etc.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this performance issue?
+      options:
+        - Low - Slightly slower than expected
+        - Medium - Significantly impacts workflow
+        - High - Makes feature unusable
+        - Critical - Prevents project completion
+    validations:
+      required: true
+
+  - type: textarea
+    id: workarounds
+    attributes:
+      label: Workarounds Attempted
+      description: Have you found any workarounds or attempted optimizations?
+      placeholder: |
+        I've tried:
+        - Reducing the dataset size
+        - Using different factor parameters
+        - Increasing system memory
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information about the performance issue.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct.
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
